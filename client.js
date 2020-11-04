@@ -1,7 +1,7 @@
 const net = require('net');
 // Other server host & port id
-// PORT: 50542
-// HOST: 135.23.222.131
+    // host: '135.23.222.131',
+    // port: 50542
 //
 /**
  * Establishes connection with the game server
@@ -11,6 +11,11 @@ const connect = function() {
     // My server host & port id
     host: '10.0.2.15',
     port: 50541
+  });
+
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: PS");
   });
   // interpret incoming data as text
   conn.setEncoding('utf8');
