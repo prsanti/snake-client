@@ -16,7 +16,20 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("Successfully connected to game server");
     conn.write("Name: PS");
+    // conn.write("Move: up");
+    // setInterval(() => conn.write("Move: up"), 50);
+    // conn.write("Move: down");
+    // conn.write("Move: left");
+    // conn.write("Move: right");
   });
+
+  // Moves up when first connecting to server (could write in first conn.on statement)
+  // conn.on('connect', () => {
+  //   conn.write("Move: up");
+  //   conn.write("Move: up");
+
+  // });
+
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
