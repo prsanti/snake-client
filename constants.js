@@ -20,8 +20,3 @@ module.exports = {
   MOVE,
   messages
 };
-
-    // // My server host & port id
-    // host: '10.0.2.15',
-    // port: 50541
-//
