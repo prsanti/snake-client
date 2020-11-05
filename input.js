@@ -31,6 +31,14 @@ const setupInput = function(conn) {
     if (key === 'd') {
       connection.write("Move: right");
     }
+
+    if (key === 'p') {
+      connection.write("Say: Poggers");
+    }
+
+    if (key === '3') {
+      connection.write("Say: ❤️");
+    }
     // process.stdout.write(key);
   };
 
