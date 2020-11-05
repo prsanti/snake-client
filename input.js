@@ -1,5 +1,8 @@
 // Stores the active TCP connection object.
 let connection;
+
+const { MOVE } = require('./constants')
+const { messages } = require('./constants')
 /**
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
@@ -17,29 +20,32 @@ const setupInput = function(conn) {
     }
 
     if (key === 'w') {
-      connection.write("Move: up");
+      connection.write(MOVE.UP);
     }
 
     if (key === 'a') {
-      connection.write("Move: left");
+      connection.write(MOVE.LEFT);
     }
 
     if (key === 's') {
-      connection.write("Move: down");
+      connection.write(MOVE.DOWN);
     }
 
     if (key === 'd') {
-      connection.write("Move: right");
+      connection.write(MOVE.RIGHT);
     }
 
     if (key === 'p') {
-      connection.write("Say: Poggers");
+      connection.write(messages.pog);
     }
 
     if (key === '3') {
-      connection.write("Say: ❤️");
+      connection.write(messages.heart);
     }
-    // process.stdout.write(key);
+
+    if (key === '1') {
+      connection.write(messages.smile);
+    }
   };
 
   // need to REFERENCE the function, not call it like handleUserInput('data')
